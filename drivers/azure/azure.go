@@ -226,7 +226,7 @@ func (driver *Driver) hackForIdentityAuth() error {
 		return err
 	}
 
-	if err := driver.runSSHCommand("sudo bash -c \"curl -sS https://bfirsh.s3.amazonaws.com/docker/docker-1.3.1-dev-identity-auth > /usr/bin/docker\"", numberOfRetries); err != nil {
+	if err := driver.runSSHCommand("sudo bash -c \"curl -sS https://ehazlett.s3.amazonaws.com/public/docker/linux/docker-1.4.0-dev-identity > /usr/bin/docker\"", numberOfRetries); err != nil {
 		return err
 	}
 
