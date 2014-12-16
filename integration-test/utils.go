@@ -3,11 +3,8 @@ package main
 import (
 	"fmt"
 	"os/exec"
+	"strings"
 	"syscall"
-)
-
-const (
-	machineBinary = "machine"
 )
 
 func getExitCode(err error) (int, error) {
@@ -39,4 +36,10 @@ func runCommandWithOutput(cmd *exec.Cmd) (output string, exitCode int, err error
 	output = string(out)
 	return
 
+}
+
+func stripTrailingCharacters(target string) string {
+	target = strings.Trim(target, "\n")
+	target = strings.Trim(target, " ")
+	return target
 }
